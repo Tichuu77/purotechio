@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* ===== PUROTECH Design System ===== */
+
+@theme {
+  --color-navy-50: #f0f4fa;
+  --color-navy-100: #dce4f2;
+  --color-navy-200: #b8c9e5;
+  --color-navy-300: #8aa6d3;
+  --color-navy-400: #5b7fbf;
+  --color-navy-500: #3b60a8;
+  --color-navy-600: #2d4a85;
+  --color-navy-700: #1e3666;
+  --color-navy-800: #142649;
+  --color-navy-900: #0A1628;
+  --color-navy-950: #060d18;
+
+  --color-water-50: #eef8ff;
+  --color-water-100: #d9eeff;
+  --color-water-200: #bce2ff;
+  --color-water-300: #8ed0ff;
+  --color-water-400: #59b5ff;
+  --color-water-500: #3394ff;
+  --color-water-600: #1c74f5;
+  --color-water-700: #155ce1;
+  --color-water-800: #184bb6;
+  --color-water-900: #1a428f;
+
+  --color-aqua-50: #ecfeff;
+  --color-aqua-100: #cff9fe;
+  --color-aqua-200: #a5f1fc;
+  --color-aqua-300: #67e5f9;
+  --color-aqua-400: #22cfee;
+  --color-aqua-500: #06b2d4;
+  --color-aqua-600: #088eb2;
+  --color-aqua-700: #0e7290;
+  --color-aqua-800: #155c75;
+  --color-aqua-900: #164d63;
+
+  --font-heading: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ===== Focus Styles ===== */
+*:focus-visible {
+  outline: 2px solid var(--color-water-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ===== Section Reveal Animations ===== */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-section.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-300);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-navy-400);
+}
+
+/* ===== Gradient Utilities ===== */
+.hero-gradient {
+  background: linear-gradient(135deg, #eef8ff 0%, #f0f4fa 50%, #ecfeff 100%);
+}
+
+.navy-gradient {
+  background: linear-gradient(135deg, var(--color-navy-900) 0%, var(--color-navy-800) 50%, #1a2e50 100%);
+}
+
+/* ===== Glass Effect ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Product Image Hover ===== */
+.product-image-hover {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product-image-hover:hover {
+  transform: scale(1.04);
+}
+
+/* ===== Lightbox Overlay ===== */
+.lightbox-overlay {
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ===== Video Play Button Pulse ===== */
+.play-pulse {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(51, 148, 255, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(51, 148, 255, 0); }
+}
+
+/* ===== Navbar transition ===== */
+.nav-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
