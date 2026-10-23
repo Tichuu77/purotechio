@@ -1,4 +1,4 @@
-import { Droplets } from 'lucide-react'
+import { Droplets, MapPin, Mail } from 'lucide-react'
 import { siteConfig } from '../../data/siteConfig'
 
 const quickLinks = [
@@ -16,9 +16,9 @@ const productLinks = [
   { label: 'Water Purification Solutions', href: '#products' },
 ]
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear()
+const currentYear = new Date().getFullYear()
 
+export default function Footer() {
   return (
     <footer className="navy-gradient text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,30 +81,31 @@ export default function Footer() {
               Contact
             </h4>
             <div className="space-y-2.5 text-sm text-navy-200">
-              {siteConfig.contact.phone ? (
-                <p>
-                  Phone:{' '}
-                  <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-white transition-colors">
-                    {siteConfig.contact.phone}
-                  </a>
-                </p>
-              ) : (
-                <p className="italic text-navy-300">Phone number coming soon</p>
-              )}
-              {siteConfig.contact.email ? (
-                <p>
-                  Email:{' '}
-                  <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-white transition-colors">
+              {siteConfig.contact.email && (
+                <div className="flex items-center gap-2">
+                  <Mail size={16} className="text-aqua-300 shrink-0" />
+                  <a
+                    href={`mailto:${siteConfig.contact.email}`}
+                    className="hover:text-white transition-colors"
+                  >
                     {siteConfig.contact.email}
                   </a>
-                </p>
-              ) : (
-                <p className="italic text-navy-300">Email coming soon</p>
+                </div>
               )}
-              {siteConfig.contact.address ? (
-                <p>{siteConfig.contact.address}</p>
-              ) : (
-                <p className="italic text-navy-300">Address coming soon</p>
+              {siteConfig.contact.address && (
+                <div className="flex items-start gap-2 pt-1">
+                  <MapPin size={16} className="text-aqua-300 shrink-0 mt-0.5" />
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                      siteConfig.contact.address
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors leading-relaxed"
+                  >
+                    {siteConfig.contact.address}
+                  </a>
+                </div>
               )}
             </div>
 
@@ -121,10 +122,10 @@ export default function Footer() {
         <div className="border-t border-white/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-navy-300">
           <p>© {currentYear} PUROTECH. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#privacy" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#terms" className="hover:text-white transition-colors">
               Terms & Conditions
             </a>
           </div>

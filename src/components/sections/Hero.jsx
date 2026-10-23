@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Play, ArrowRight } from 'lucide-react'
+import { ArrowRight, Mail } from 'lucide-react'
 import Button from '../ui/Button'
 
 export default function Hero() {
@@ -58,9 +58,9 @@ export default function Hero() {
                 Explore Our Products
                 <ArrowRight size={18} />
               </Button>
-              <Button variant="secondary" size="lg" href="#videos">
-                <Play size={16} className="text-water-600" />
-                Watch Product Video
+              <Button variant="secondary" size="lg" href="#contact">
+                <Mail size={16} className="text-water-600" />
+                Get in Touch
               </Button>
             </div>
           </div>

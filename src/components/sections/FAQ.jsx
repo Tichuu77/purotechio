@@ -35,7 +35,7 @@ const faqItems = [
   {
     question: 'How can I contact PUROTECH?',
     answer:
-      'You can reach the PUROTECH team by filling out the enquiry form on this page. If direct contact details such as a phone number or email address are available, they will be listed in the Contact section and footer of this website.',
+      'You can reach the PUROTECH team by filling out the enquiry form on this page or by emailing us directly at Purotech235@gmail.com. Our office address is also listed in the Contact section and footer.',
   },
 ]
 

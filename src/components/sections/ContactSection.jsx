@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react'
+import { Send, Loader2, CheckCircle, AlertCircle, MapPin, Mail } from 'lucide-react'
 import SectionHeading from '../ui/SectionHeading'
 import Button from '../ui/Button'
 import { siteConfig } from '../../data/siteConfig'
@@ -7,10 +7,9 @@ import { products } from '../../data/products'
 
 const initialFormState = {
   name: '',
-  phone: '',
   email: '',
-  product: '',
   city: '',
+  product: '',
   message: '',
 }
 
@@ -39,16 +38,13 @@ export default function ContactSection() {
   const validate = () => {
     const errs = {}
     if (!form.name.trim()) errs.name = 'Name is required'
-    if (!form.phone.trim()) {
-      errs.phone = 'Phone number is required'
-    } else if (!/^[\d\s+()-]{7,15}$/.test(form.phone.trim())) {
-      errs.phone = 'Please enter a valid phone number'
-    }
-    if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+    if (!form.email.trim()) {
+      errs.email = 'Email address is required'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
       errs.email = 'Please enter a valid email address'
     }
-    if (!form.product) errs.product = 'Please select a product'
     if (!form.city.trim()) errs.city = 'City is required'
+    if (!form.product) errs.product = 'Please select a product'
     return errs
   }
 
@@ -147,27 +143,10 @@ export default function ContactSection() {
                     {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
                   </div>
 
-                  {/* Phone */}
-                  <div>
-                    <label htmlFor="contact-phone" className="block text-sm font-medium text-navy-800 mb-1.5">
-                      Phone Number <span className="text-red-400">*</span>
-                    </label>
-                    <input
-                      id="contact-phone"
-                      type="tel"
-                      name="phone"
-                      value={form.phone}
-                      onChange={handleChange}
-                      placeholder="Your phone number"
-                      className={inputClasses('phone')}
-                    />
-                    {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone}</p>}
-                  </div>
-
                   {/* Email */}
                   <div>
                     <label htmlFor="contact-email" className="block text-sm font-medium text-navy-800 mb-1.5">
-                      Email <span className="text-slate-400 text-xs">(optional)</span>
+                      Email Address <span className="text-red-400">*</span>
                     </label>
                     <input
                       id="contact-email"
@@ -180,7 +159,9 @@ export default function ContactSection() {
                     />
                     {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
                   </div>
+                </div>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   {/* City */}
                   <div>
                     <label htmlFor="contact-city" className="block text-sm font-medium text-navy-800 mb-1.5">
@@ -197,29 +178,29 @@ export default function ContactSection() {
                     />
                     {errors.city && <p className="text-xs text-red-500 mt-1">{errors.city}</p>}
                   </div>
-                </div>
 
-                {/* Product */}
-                <div className="mb-4">
-                  <label htmlFor="contact-product" className="block text-sm font-medium text-navy-800 mb-1.5">
-                    Product of Interest <span className="text-red-400">*</span>
-                  </label>
-                  <select
-                    id="contact-product"
-                    name="product"
-                    value={form.product}
-                    onChange={handleChange}
-                    className={inputClasses('product')}
-                  >
-                    <option value="">Select a product</option>
-                    {products.map((p) => (
-                      <option key={p.id} value={p.name}>
-                        {p.name}
-                      </option>
-                    ))}
-                    <option value="General Enquiry">General Enquiry</option>
-                  </select>
-                  {errors.product && <p className="text-xs text-red-500 mt-1">{errors.product}</p>}
+                  {/* Product */}
+                  <div>
+                    <label htmlFor="contact-product" className="block text-sm font-medium text-navy-800 mb-1.5">
+                      Product of Interest <span className="text-red-400">*</span>
+                    </label>
+                    <select
+                      id="contact-product"
+                      name="product"
+                      value={form.product}
+                      onChange={handleChange}
+                      className={inputClasses('product')}
+                    >
+                      <option value="">Select a product</option>
+                      {products.map((p) => (
+                        <option key={p.id} value={p.name}>
+                          {p.name}
+                        </option>
+                      ))}
+                      <option value="General Enquiry">General Enquiry</option>
+                    </select>
+                    {errors.product && <p className="text-xs text-red-500 mt-1">{errors.product}</p>}
+                  </div>
                 </div>
 
                 {/* Message */}
@@ -249,8 +230,8 @@ export default function ContactSection() {
                           : 'The enquiry form is not yet connected to a submission endpoint.'}
                       </p>
                       <p className="text-xs text-amber-600 mt-1">
-                        {siteConfig.contact.phone
-                          ? `You can also call us at ${siteConfig.contact.phone}`
+                        {siteConfig.contact.email
+                          ? `You can also email us directly at ${siteConfig.contact.email}`
                           : 'Please check back soon or reach out through available contact channels.'}
                       </p>
                     </div>
@@ -281,8 +262,57 @@ export default function ContactSection() {
             )}
           </div>
 
-          {/* Contact alternatives */}
-          <div className="mt-8 text-center">
+          {/* Contact Details (Email & Address) */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {siteConfig.contact.email && (
+              <div className="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center gap-3 text-white">
+                <div className="w-10 h-10 rounded-xl bg-water-500/20 flex items-center justify-center shrink-0 text-aqua-300">
+                  <Mail size={20} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs uppercase tracking-wider font-semibold text-aqua-300 mb-0.5">
+                    Email Us
+                  </p>
+                  <a
+                    href={`mailto:${siteConfig.contact.email}`}
+                    className="text-sm text-navy-100 hover:text-white transition-colors truncate block font-medium"
+                  >
+                    {siteConfig.contact.email}
+                  </a>
+                </div>
+              </div>
+            )}
+
+            {siteConfig.contact.address && (
+              <div className="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-start gap-3 text-white">
+                <div className="w-10 h-10 rounded-xl bg-water-500/20 flex items-center justify-center shrink-0 text-aqua-300 mt-0.5">
+                  <MapPin size={20} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <p className="text-xs uppercase tracking-wider font-semibold text-aqua-300">
+                      Our Address
+                    </p>
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                        siteConfig.contact.address
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[11px] font-semibold px-2 py-0.5 rounded bg-white/15 hover:bg-white/25 text-white transition-colors inline-flex items-center gap-1 shrink-0"
+                    >
+                      Directions →
+                    </a>
+                  </div>
+                  <p className="text-xs text-navy-100 leading-relaxed">
+                    {siteConfig.contact.address}
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="mt-6 text-center">
             <p className="text-navy-300 text-sm">
               {siteConfig.contact.whatsapp ? (
                 <>
@@ -297,7 +327,7 @@ export default function ContactSection() {
                   </a>
                 </>
               ) : (
-                'Contact details will be updated here once available.'
+                'You can also get in touch by filling out the form above.'
               )}
             </p>
           </div>
