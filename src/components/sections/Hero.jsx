@@ -74,7 +74,7 @@ export default function Hero() {
 
             <div className="relative">
               <img
-                src="https://res.cloudinary.com/dxujnm2sl/image/upload/v1792335566/Premium_Purotech_Water_Ionizer_Studio_Shot_f1vavq.png"
+                src="https://res.cloudinary.com/dxujnm2sl/image/upload/v1792815771/WhatsApp_Image_2026-10-23_at_15.12.32_biaqfe.jpg"
                 alt="Premium PUROTECH Water Ionizer — sleek studio product photograph"
                 width={520}
                 height={520}
