@@ -13,7 +13,7 @@ export const siteConfig = {
   // TODO: Replace with actual contact details when available
   contact: {
     phone: null,
-    email: 'Purotech235@gmail.com',
+    email: 'purotechio@gmail.com',
     whatsapp: null,
     address:
       'Rustomjee Seasons, Nanasaheb Dharmadhikari Rd, near MIG Colony, Kala Nagar, Bandra East, Mumbai, Maharashtra 400051',

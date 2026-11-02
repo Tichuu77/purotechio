@@ -105,7 +105,7 @@ export default function PrivacyPolicy({ onBack }) {
             </p>
             <ul className="list-disc pl-5 text-sm space-y-2 mb-3">
               <li>
-                <strong>Personal Information Provided Directly by You:</strong> When you submit an enquiry, request pricing, or contact our customer team, we may collect your name, email address (<span className="text-navy-900 font-medium">Purotech235@gmail.com</span> recipient), city/location, product of interest, and any message or details you provide in your enquiry.
+                <strong>Personal Information Provided Directly by You:</strong> When you submit an enquiry, request pricing, or contact our customer team, we may collect your name, email address (<span className="text-navy-900 font-medium">purotechio@gmail.com</span> recipient), city/location, product of interest, and any message or details you provide in your enquiry.
               </li>
               <li>
                 <strong>Automated Device & Usage Information:</strong> When you browse our website, we may collect standard technical details, including your internet protocol (IP) address, browser type, operating system, pages viewed, and referral sources to ensure website functionality and improve usability.
