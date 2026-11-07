@@ -41,17 +41,15 @@ export default function TestimonialCard({ testimonial }) {
           </div>
         </div>
 
-        {/* Product Tag */}
-        {testimonial.product && (
-          <div className="mb-3">
-            <span className="inline-block text-[11px] font-semibold text-water-700 bg-water-50/80 px-2.5 py-0.5 rounded-full border border-water-100/60">
-              {testimonial.product}
-            </span>
-          </div>
+        {/* Title from customer testimonial */}
+        {testimonial.title && (
+          <h4 className="font-heading font-bold text-navy-900 text-base mb-2 group-hover:text-water-600 transition-colors">
+            {testimonial.title}
+          </h4>
         )}
 
         {/* Review Text */}
-        <p className="text-slate-700 text-sm leading-relaxed mb-6 italic">
+        <p className="text-slate-600 text-sm leading-relaxed mb-6 italic">
           "{testimonial.review}"
         </p>
       </div>
@@ -84,9 +82,9 @@ export default function TestimonialCard({ testimonial }) {
 
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-1.5">
-            <h4 className="font-heading font-bold text-navy-900 text-sm truncate">
+            <h5 className="font-heading font-bold text-navy-900 text-sm truncate">
               {testimonial.name}
-            </h4>
+            </h5>
             <span title="Verified Customer" className="shrink-0 text-emerald-500">
               <CheckCircle2 size={14} className="fill-emerald-100 text-emerald-600" />
             </span>
@@ -99,4 +97,3 @@ export default function TestimonialCard({ testimonial }) {
     </div>
   )
 }
-
