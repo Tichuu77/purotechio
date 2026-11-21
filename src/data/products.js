@@ -9,6 +9,7 @@ export const products = [
     image:
       'https://res.cloudinary.com/dxujnm2sl/image/upload/v1792335566/PUROTECH_Alkaline_Water_Ionizer_ayu8td.png',
     features: [
+      'Manufactured in Saitama, Japan',
       'Alkaline water ionization technology',
       'Compact countertop design',
       'User-friendly controls',
@@ -22,6 +23,7 @@ export const products = [
     image:
       'https://res.cloudinary.com/dxujnm2sl/image/upload/v1792335566/Premium_Purotech_Water_Ionizer_Studio_Shot_f1vavq.png',
     features: [
+      'Manufactured in Saitama, Japan',
       'Premium build quality',
       'Elegant studio-grade design',
       'Designed for everyday use',
@@ -35,6 +37,7 @@ export const products = [
     image:
       'https://res.cloudinary.com/dxujnm2sl/image/upload/v1792335568/PUROTECH_Water_Purifier_on_Wood_pohyhd.png',
     features: [
+      'Manufactured in Saitama, Japan',
       'Advanced water purification',
       'Modern, space-conscious design',
       'Durable and reliable build',
@@ -47,14 +50,14 @@ export const spotlightProduct = {
   name: 'PUROTECH Alkaline Water Ionizer',
   heading: 'Engineered for a More Thoughtful Water Experience',
   description:
-    'Every PUROTECH product is designed with purpose — from the precision of its water processing to the elegance of its form. Experience water solutions that integrate seamlessly into your home and lifestyle.',
+    'Every PUROTECH product is designed with purpose — from the precision of its water processing to the elegance of its form. Manufactured in Saitama, Japan, experience water solutions that integrate seamlessly into your home and lifestyle.',
   image:
     'https://res.cloudinary.com/dxujnm2sl/image/upload/v1792335568/PUROTECH_Alkaline_Water_Showcase_scfzkp.png',
   benefits: [
+    'Manufactured in Saitama, Japan with precision engineering',
     'Thoughtfully designed for daily hydration',
     'Modern aesthetics that complement any space',
     'Easy-to-use controls for everyday convenience',
     'Built with quality materials and attention to detail',
-    'Focused on a better water experience',
   ],
 }

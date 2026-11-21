@@ -8,6 +8,14 @@ export const siteConfig = {
     tagline: 'Pure Water. Better Living.',
     description:
       'PUROTECH is focused on bringing thoughtfully designed water solutions to modern homes and everyday life.',
+    origin: 'Manufactured in Saitama, Japan',
+  },
+
+  // Manufacturing Information
+  manufacturing: {
+    country: 'Japan',
+    city: 'Saitama',
+    label: 'Manufactured in Saitama, Japan',
   },
 
   // TODO: Replace with actual contact details when available

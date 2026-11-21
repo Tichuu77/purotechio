@@ -33,9 +33,13 @@ export default function Footer() {
               </div>
               <span className="font-heading text-xl font-extrabold tracking-tight">PUROTECH</span>
             </div>
-            <p className="text-navy-200 text-sm leading-relaxed max-w-xs">
+            <p className="text-navy-200 text-sm leading-relaxed max-w-xs mb-3">
               {siteConfig.brand.description}
             </p>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/10 text-aqua-300 text-xs font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span>Manufactured in Saitama, Japan</span>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -108,6 +112,9 @@ export default function Footer() {
                   </a>
                 </div>
               )}
+              <div className="pt-2 border-t border-white/10 text-xs text-navy-300">
+                <span className="text-aqua-300 font-medium">Manufacturing:</span> Saitama, Japan
+              </div>
             </div>
 
             {/* Social */}

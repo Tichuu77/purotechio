@@ -35,7 +35,12 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Content */}
           <div className="order-2 lg:order-1 text-center lg:text-left">
-            <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-water-600 mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-water-50 border border-water-200 text-water-700 text-xs font-semibold mb-4 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Manufactured in Saitama, Japan</span>
+            </div>
+
+            <span className="block text-xs font-bold tracking-[0.25em] uppercase text-water-600 mb-3">
               Pure Water. Better Living.
             </span>
 
@@ -91,7 +96,11 @@ export default function Hero() {
                   imgLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
               >
-                <p className="text-xs font-semibold text-navy-900">Designed for Modern Living</p>
+                <p className="text-xs font-bold text-navy-900 flex items-center gap-1.5">
+                  <span className="inline-block w-2 h-2 rounded-full bg-emerald-500" />
+                  Manufactured in Saitama, Japan
+                </p>
+                <p className="text-[11px] text-slate-500">Precision Engineering & Quality</p>
               </div>
             </div>
           </div>

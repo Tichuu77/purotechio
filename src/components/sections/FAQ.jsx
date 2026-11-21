@@ -3,6 +3,11 @@ import Accordion from '../ui/Accordion'
 
 const faqItems = [
   {
+    question: 'Where are PUROTECH products manufactured?',
+    answer:
+      'All PUROTECH water purifiers and alkaline water ionizers are engineered and manufactured in Saitama, Japan, adhering to stringent Japanese quality standards and advanced precision manufacturing.',
+  },
+  {
     question: 'What products does PUROTECH offer?',
     answer:
       'PUROTECH offers a range of water solutions including water purifiers and alkaline water ionizers. Each product is designed with modern aesthetics, quality materials, and user-friendly operation in mind. Browse the Products section above to see the current collection.',

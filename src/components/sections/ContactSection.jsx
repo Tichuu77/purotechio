@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Send, Loader2, CheckCircle, AlertCircle, MapPin, Mail } from 'lucide-react'
+import { Send, Loader2, CheckCircle, AlertCircle, MapPin, Mail, Factory } from 'lucide-react'
 import SectionHeading from '../ui/SectionHeading'
 import Button from '../ui/Button'
 import { siteConfig } from '../../data/siteConfig'
@@ -262,8 +262,8 @@ export default function ContactSection() {
             )}
           </div>
 
-          {/* Contact Details (Email & Address) */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Contact Details (Email, Address & Manufacturing) */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {siteConfig.contact.email && (
               <div className="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-center gap-3 text-white">
                 <div className="w-10 h-10 rounded-xl bg-water-500/20 flex items-center justify-center shrink-0 text-aqua-300">
@@ -310,6 +310,23 @@ export default function ContactSection() {
                 </div>
               </div>
             )}
+
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 flex items-start gap-3 text-white">
+              <div className="w-10 h-10 rounded-xl bg-water-500/20 flex items-center justify-center shrink-0 text-aqua-300 mt-0.5">
+                <Factory size={20} />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-xs uppercase tracking-wider font-semibold text-aqua-300 mb-1">
+                  Manufacturing Origin
+                </p>
+                <p className="text-sm font-medium text-white">
+                  Saitama, Japan
+                </p>
+                <p className="text-xs text-navy-200 mt-0.5">
+                  Engineered & manufactured under Japanese quality standards
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="mt-6 text-center">

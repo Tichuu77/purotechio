@@ -9,8 +9,8 @@ const highlights = [
   },
   {
     icon: Cpu,
-    title: 'Modern Water Technology',
-    description: 'Thoughtfully engineered products with a focus on quality and performance.',
+    title: 'Japanese Precision Engineering',
+    description: 'Manufactured in Saitama, Japan, combining quality standards with modern water technology.',
   },
   {
     icon: PenTool,

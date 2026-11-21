@@ -36,23 +36,23 @@ export default function AboutUs() {
             </h2>
             <p className="text-slate-600 text-base leading-relaxed mb-5">
               PUROTECH is focused on bringing thoughtfully designed water solutions to modern homes
-              and everyday life. Through a product-focused approach, an emphasis on usability, and a
-              commitment to customer support, PUROTECH aims to make exploring water purification and
-              alkaline water ionization solutions simpler and more convenient.
+              and everyday life. Manufactured in Saitama, Japan, our products combine Japanese precision
+              engineering with usability and customer-focused support, making exploring water purification
+              and alkaline water ionization simpler and more dependable.
             </p>
             <p className="text-slate-600 text-base leading-relaxed mb-8">
               Every PUROTECH product reflects a philosophy of quality and purpose — combining
-              modern design sensibilities with practical water solutions. The brand prioritizes
-              product quality, customer guidance, and ongoing support as core values.
+              modern design sensibilities with practical, high-performance water solutions. The brand
+              prioritizes Japanese manufacturing standards, customer guidance, and ongoing support as core values.
             </p>
 
             {/* Values */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               {[
+                'Manufactured in Saitama, Japan',
                 'Product Quality',
+                'Japanese Engineering',
                 'Customer Support',
-                'Modern Design',
-                'Thoughtful Engineering',
               ].map((value) => (
                 <div key={value} className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-lg bg-water-50 flex items-center justify-center shrink-0">
